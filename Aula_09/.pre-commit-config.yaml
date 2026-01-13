@@ -1,0 +1,30 @@
+default_language_version:
+  python: python3.11
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+        args:
+        -   --unsafe
+        id: enf-of-file-fixer
+        id: trailing-whitespace
+    repo: https://github.com/asottile/pyupgrade
+    rev: v3.70.0
+    hooks:
+    -   id: pyupgrade
+        args:
+        - --py3-plus
+        - --keep-runtime-typing
+    repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.275
+    hooks:
+    -   id: ruff
+        args:
+        - --fix
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black

@@ -1,0 +1,8 @@
+run:
+	@uvicorn Aula_08.workout_api.main:app --reload
+
+create-migrations:
+	@PYTHONPATH=$PYTHONPATH:$(pwd) alembic revision --autogenerate -m s(d)
+
+run-migrations:
+	@PYTHONPATH=$PYTHONPATH:$(pwd) alembic upgrade head
